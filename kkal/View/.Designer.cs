@@ -55,6 +55,10 @@
             // CbRecipe
             // 
             this.CbRecipe.FormattingEnabled = true;
+            this.CbRecipe.Items.AddRange(new object[] {
+            "potato",
+            "meat",
+            "salat"});
             this.CbRecipe.Location = new System.Drawing.Point(20, 82);
             this.CbRecipe.Name = "CbRecipe";
             this.CbRecipe.Size = new System.Drawing.Size(221, 28);

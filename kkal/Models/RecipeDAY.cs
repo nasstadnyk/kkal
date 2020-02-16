@@ -30,10 +30,7 @@ namespace kkal
             int allvitamins = 0;
             int minerals = 0;
             int allminerals = 0;
-
-
-
-            
+     
 
             foreach (Recipe recipe in chosenRecipe)
             {
