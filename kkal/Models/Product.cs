@@ -3,30 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Json;
+using System.Text.Json;
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace kkal
 {
+    [DataContract]
     class Product
     {
+        [DataMember]
         RecipeDAY day = new RecipeDAY();
+        [DataMember]
         private string Name;
         public string name { get { return Name; } }
+        [DataMember]
         private string Type;
         public string type { get { return Type; } }
+        [DataMember]
         private int Kkal;
         public int kkal { get { return Kkal; } }
+        [DataMember]
         private int Mass;
         public int mass { get { return Mass; } }
+        [DataMember]
         private int Protein;
         public int protein { get { return Protein; } }
+        [DataMember]
         private int Fat;
         public int fat { get { return Fat; } }
+        [DataMember]
         private int Carbohydrate;
         public int carbohydrate { get { return Carbohydrate; } }
+        [DataMember]
         private int Vitamin;
         public int vitamin { get { return Vitamin; } }
+        [DataMember]
         private int Mineral;
         public int mineral { get { return Mineral; } }
+        [DataMember]
+        //private List<Product> Products = new List<Product>();
+        //public List<Product> products { get { return Products; } }
+        List<Product> products = new List<Product>();
+
 
 
         public Product()

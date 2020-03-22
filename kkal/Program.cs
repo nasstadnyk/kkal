@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace kkal
 {
@@ -14,6 +15,7 @@ namespace kkal
         [STAThread]
         static void Main()
         {
+            MessageBox.Show(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

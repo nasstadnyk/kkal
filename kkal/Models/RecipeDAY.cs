@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace kkal
 {
+    [DataContract]
     class RecipeDAY
     {
+        [DataMember]
         private List<Product> allIngredient = new List<Product>();
         public List<Product> AllIngredient { get { return allIngredient; } }
+        [DataMember]
         private List<Recipe> allRecipes = new List<Recipe>();
         public List<Recipe> AllRecipes { get { return allRecipes; } }
+        [DataMember]
         private List<Recipe> chosenRecipe = new List<Recipe>();
         public List<Recipe> ChosenRecipe { get { return chosenRecipe; } }
 

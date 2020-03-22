@@ -7,6 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Configuration;
+
+
 
 namespace kkal
 {
@@ -20,20 +27,23 @@ namespace kkal
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           // dAY.AllIngredient.Add(new Product("popato", "plant", 120, 0, 0, 0, 0, 0, 0));
+
+            //JSONSerializer.Deserialize(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+            //dAY.AllIngredient.Add(new Product("popato", "plant", 120, 0, 0, 0, 0, 0, 0));
             //dAY.AllIngredient.Add(new Product("meat", "animal", 250, 0, 0, 0, 0, 0, 0));
             //dAY.AllIngredient.Add(new Product("apple", "plant", 10, 0, 0, 0, 0, 0, 0));
             //dAY.AllIngredient.Add(new Product("fish", "animal", 55, 0, 0, 0, 0, 0, 0));
             //dAY.AllIngredient.Add(new Product("oil", "plant", 99, 0, 0, 0, 0, 0, 0));
             //dAY.AllIngredient.Add(new Product("banana", "plant", 29, 0, 0, 0, 0, 0, 0));
 
-            //List<Product> productR1 = new List<Product>();
-            //productR1.Add(new Product("popato", "plant", 120, 200, 9, 5, 40, 23, 36));
-            //productR1.Add(new Product("oil", "plant", 99, 10, 1, 87, 15, 34, 35));
-            //List<Product> productR2 = new List<Product>();
-            //productR2.Add(new Product("meat", "animal", 250, 500, 89, 45, 12, 23, 65));
-            //productR2.Add(new Product("oil", "plant", 99, 20, 1, 87, 15, 34, 35));
-            //productR2.Add(new Product("apple", "plant", 10, 0, 3, 5, 13, 65, 44));
+
+            List<Product> productR1 = new List<Product>();
+            productR1.Add(new Product("popato", "plant", 120, 200, 9, 5, 40, 23, 36));
+            productR1.Add(new Product("oil", "plant", 99, 10, 1, 87, 15, 34, 35));
+            List<Product> productR2 = new List<Product>();
+            productR2.Add(new Product("meat", "animal", 250, 500, 89, 45, 12, 23, 65));
+            productR2.Add(new Product("oil", "plant", 99, 20, 1, 87, 15, 34, 35));
+            productR2.Add(new Product("apple", "plant", 10, 0, 3, 5, 13, 65, 44));
             List<Product> productR3 = new List<Product>();
             productR3.Add(new Product("fish", "animal", 55, 435, 46, 67, 23, 66, 32));
             productR3.Add(new Product("oil", "plant", 99, 10, 1, 87, 15, 34, 35));
@@ -95,6 +105,16 @@ namespace kkal
         private void BtClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           // FileReader.Reader(openFileDialog1);
+        }
+
+        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
+        {
+
         }
     }
 }
