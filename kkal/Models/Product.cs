@@ -82,15 +82,15 @@ namespace kkal
             using (FileStream fs = new FileStream(tx, FileMode.OpenOrCreate))
             {
                 Product product = new Product();
-                product.Name = "Apple";
+                product.Name = "Potato";
                 product.Type = "plant";
                 product.Kkal = 120;
-                product.Mass = 0;
-                product.Protein = 0;
-                product.Fat = 0;
-                product.Carbohydrate = 0;
-                product.Vitamin = 0;
-                product.Mineral = 0;
+                product.Mass = 340;
+                product.Protein = 330;
+                product.Fat = 20;
+                product.Carbohydrate =420;
+                product.Vitamin = 320;
+                product.Mineral = 240;
                 string json = JsonConvert.SerializeObject(product);
 
                 Product restoredProduct = JsonConvert.DeserializeObject<Product>(json);
