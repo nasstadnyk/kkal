@@ -4,15 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
-using System.Text.Json;
 using System.IO;
 using System.Runtime.Serialization;
+using Newtonsoft;
+using Newtonsoft.Json;
+using System.Configuration;
 
 namespace kkal
 {
+    
     [DataContract]
     class Product
     {
+        
         [DataMember]
         RecipeDAY day = new RecipeDAY();
         [DataMember]
@@ -70,6 +74,28 @@ namespace kkal
         {
             this.Kkal = kkal;
             this.Mass = mass;
+        }
+
+         public static void Json()
+        {
+            var tx = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            using (FileStream fs = new FileStream(tx, FileMode.OpenOrCreate))
+            {
+                Product product = new Product();
+                product.Name = "Apple";
+                product.Type = "plant";
+                product.Kkal = 120;
+                product.Mass = 0;
+                product.Protein = 0;
+                product.Fat = 0;
+                product.Carbohydrate = 0;
+                product.Vitamin = 0;
+                product.Mineral = 0;
+                string json = JsonConvert.SerializeObject(product);
+
+                Product restoredProduct = JsonConvert.DeserializeObject<Product>(json);
+                
+            }
         }
 
         private void ingredient(object sender, EventArgs e)

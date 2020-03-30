@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace kkal.View
 {
-    class HomeController: Controller
+    class HomeController
     {
     }
 }

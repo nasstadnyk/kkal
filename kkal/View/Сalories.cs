@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Json;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Configuration;
 
 
@@ -28,6 +26,8 @@ namespace kkal
         private void Form1_Load(object sender, EventArgs e)
         {
 
+
+            Product.Json();
             //JSONSerializer.Deserialize(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             //dAY.AllIngredient.Add(new Product("popato", "plant", 120, 0, 0, 0, 0, 0, 0));
             //dAY.AllIngredient.Add(new Product("meat", "animal", 250, 0, 0, 0, 0, 0, 0));

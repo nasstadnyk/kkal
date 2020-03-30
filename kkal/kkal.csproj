@@ -59,8 +59,8 @@
   <ItemGroup>
     <Compile Include="Data\FileReader.cs" />
     <Compile Include="Data\ISerializer.cs" />
-    <Compile Include="Json.cs" />
-    <Compile Include="JSONSerializer.cs" />
+    <Compile Include="Data\Json.cs" />
+    <Compile Include="Data\JSONSerializer.cs" />
     <Compile Include="Models\RecipeDAY.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="View\HomeController.cs" />
